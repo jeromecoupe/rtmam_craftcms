@@ -1,0 +1,26 @@
+dateModified: 1668013537
+email:
+  fromEmail: jercoupe@gmail.com
+  fromName: 'Zodiakagency Craft'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    9a47d3d4-06fa-448c-a974-f78b60fab694: 'Zodiakagency Craft' # Zodiakagency Craft
+    59b7e146-e8a9-4b01-8c5b-96cdb9126900: Projects # Projects
+    255693df-55b5-4718-9ddb-68fa1ada246d: projects # projects
+    71616991-7357-4326-a812-50fe9892f288: Tagline # Tagline
+    bbb88a10-79f6-4e02-987b-330fa874eb7e: Default # Default
+    eb57f4c8-ab1b-49ab-8751-319e54b8fac2: 'Zodiakagency Craft' # Zodiakagency Craft
+    f684ff07-12b7-4d89-a0b8-4431a99fa54a: Common # Common
+system:
+  edition: solo
+  live: true
+  name: 'Zodiakagency Craft'
+  schemaVersion: 4.0.0.9
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

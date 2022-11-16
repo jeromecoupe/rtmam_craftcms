@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {# Chopper tous les projets
+    - les classer par date de publication ascendantes
+    - chopper les 4 derniers #}
+    {% set latestProjects = craft.entries()
+        .section("projects")
+        .orderBy("postDate DESC")
+        .limit(4)
+        .all() %}
+
+    {# Afficher les champs des projets dont on a besoin #}
+    {% for item in latestProjects %}
+        <article>
+            <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+            <p>{{ item.projectTagline }}</p>
+        </article>
+    {% endfor %}
+
+    
+</body>
+</html>

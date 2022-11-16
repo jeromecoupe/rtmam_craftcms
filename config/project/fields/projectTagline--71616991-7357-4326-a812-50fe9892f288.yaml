@@ -1,0 +1,19 @@
+columnSuffix: cdmlauoz
+contentColumnType: string(256)
+fieldGroup: 255693df-55b5-4718-9ddb-68fa1ada246d # projects
+handle: projectTagline
+instructions: 'Short tagline for your project'
+name: Tagline
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 64
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
