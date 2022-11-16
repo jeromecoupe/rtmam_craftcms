@@ -5,6 +5,18 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            elementCondition: null
+            fieldUid: 57d5d656-f1bc-4e49-b6e7-237035606edb # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 39fab1f1-7674-4c0a-b910-4c5991458fdc
+            userCondition: null
+            warning: null
+            width: 100
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
@@ -39,6 +51,18 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 216db44c-b1df-4894-a3c7-0502257650e0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 715fe2d6-a473-4909-be0a-efaa2280709c # Introduction
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6ce78ab8-c6ec-40a2-8545-a225710c04ac
             userCondition: null
             warning: null
             width: 100

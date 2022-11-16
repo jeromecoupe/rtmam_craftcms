@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <main>
+    {# block dont le contenu va être remplacé par le contenu du même block dans le template enfant #}
+    {% block main %}{% endblock %}
+  </main>
+  {# inclure le code contenu dans le fichier #}
+  {% include "_includes/footer.twig" %}
+</body>
+</html>

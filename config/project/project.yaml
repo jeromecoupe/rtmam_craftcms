@@ -1,17 +1,33 @@
-dateModified: 1668013537
+dateModified: 1668616263
 email:
   fromEmail: jercoupe@gmail.com
   fromName: 'Zodiakagency Craft'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  projectsImages:
+    hasUrls: true
+    name: 'Projects Images'
+    settings:
+      path: '@assetsBasePath/projects_images'
+    type: craft\fs\Local
+    url: '@assetsBaseUrl/projects_images'
 meta:
   __names__:
     9a47d3d4-06fa-448c-a974-f78b60fab694: 'Zodiakagency Craft' # Zodiakagency Craft
+    57d5d656-f1bc-4e49-b6e7-237035606edb: Image # Image
     59b7e146-e8a9-4b01-8c5b-96cdb9126900: Projects # Projects
+    715fe2d6-a473-4909-be0a-efaa2280709c: Introduction # Introduction
     255693df-55b5-4718-9ddb-68fa1ada246d: projects # projects
     71616991-7357-4326-a812-50fe9892f288: Tagline # Tagline
+    b003f777-25b4-4ecf-90b5-3e954ca2dc8a: 'Projects Images' # Projects Images
     bbb88a10-79f6-4e02-987b-330fa874eb7e: Default # Default
     eb57f4c8-ab1b-49ab-8751-319e54b8fac2: 'Zodiakagency Craft' # Zodiakagency Craft
     f684ff07-12b7-4d89-a0b8-4431a99fa54a: Common # Common
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
   edition: solo
   live: true

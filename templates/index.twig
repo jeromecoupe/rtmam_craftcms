@@ -1,30 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "_layouts/base.twig" %}
 
+{% block main %}
     {# Chopper tous les projets
     - les classer par date de publication ascendantes
-    - chopper les 4 derniers #}
+    - chopper les 4 derniers
+    - Craft renvoie un tableau d'objets, 
+        - chaque handle de champs est une key de cet objet
+        - chaque valeur de champs est une valeur qui correspond à la key #}
     {% set latestProjects = craft.entries()
         .section("projects")
         .orderBy("postDate DESC")
         .limit(4)
         .all() %}
 
-    {# Afficher les champs des projets dont on a besoin #}
+    {# Afficher les champs des projets dont on a besoin
+    - Boucler sur la tableau d'objets
+    - Assigner chaque objet du tableau à une variable "item"
+    - Afficher les champs avec "item.handleDuChamp" #}
     {% for item in latestProjects %}
         <article>
+
+            {# les champs relationnels dans Craft retournent TOOUJOURS un tableau. Ici on doit prendre le premier (et le seul) asset dans ce tableau (notre image). C'est ce qu'on fait en utilisant la méthode one() #}
+            {% set img = item.projectImage.one() %}
+
+            {# si l'image existe / posède une valeur, on l'affiche #}
+            {% if img %}
+                <p>
+                    <img src="{{ img.getUrl({ width: 450, height: 600 }) }}"
+                         srcset="{{ img.getUrl({ width: 450, height: 600 }) }} 450w,
+                                 {{ img.getUrl({ width: 600, height: 800 }) }} 600w"
+                         sizes="(min-width: 1500px) 350px,
+                                (min-width: 1024px) 25vw,
+                                (min-width: 500px) 50vw,
+                                100vw"
+                         alt="">
+                </p>
+            {% endif %}
             <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
             <p>{{ item.projectTagline }}</p>
         </article>
     {% endfor %}
-
-    
-</body>
-</html>
+{% endblock %}

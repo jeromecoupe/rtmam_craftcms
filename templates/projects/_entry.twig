@@ -1,0 +1,17 @@
+{% extends "_layouts/base.twig" %}
+
+{% block main %}
+  {# 
+    - comme Craft est gentil et qu'il SAIT (psq on lui a dit en créant notre section projet) que ce format d'URL correspond à une entry de la section projet (ROUTING), il met à notre disposition un objet "entry".
+    - cet objet "entry" contient les valeurs de tous les champs (pour afficher le champs title, on écrit "{{ entry.title }}" et ainsi de suite)
+  #}
+  {% set img = entry.projectImage.one() %}
+  {% if img %}
+    <img src="{{ img.getUrl() }}" alt="">
+  {% endif %}
+  <h1>{{ entry.title }}</h1>
+  <p>{{ entry.projectTagline }}</p>
+  <div>
+    {{ entry.projectIntro }}
+  </div>
+{% endblock %}

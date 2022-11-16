@@ -22,4 +22,12 @@ return GeneralConfig::create()
     ->allowAdminChanges(App::env('ALLOW_ADMIN_CHANGES') ?? false)
     // Disallow robots
     ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
+    // Generate images before page load
+    ->generateTransformsBeforePageLoad(true)
+    // aliases
+    ->aliases([
+        '@web' => App::env('BASE_URL'),
+        '@assetsBaseUrl' => App::env('BASE_URL').'/uploads',
+        '@assetsBasePath' => App::env('BASE_PATH').'/uploads',
+    ])
 ;
