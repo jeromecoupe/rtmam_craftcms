@@ -1,43 +1,96 @@
 {% extends "_layouts/base.twig" %}
+{% set test = "coucou" %}
 
 {% block main %}
-    {# Chopper tous les projets
-    - les classer par date de publication ascendantes
-    - chopper les 4 derniers
-    - Craft renvoie un tableau d'objets, 
-        - chaque handle de champs est une key de cet objet
-        - chaque valeur de champs est une valeur qui correspond à la key #}
-    {% set latestProjects = craft.entries()
-        .section("projects")
-        .orderBy("postDate DESC")
-        .limit(4)
-        .all() %}
 
-    {# Afficher les champs des projets dont on a besoin
-    - Boucler sur la tableau d'objets
-    - Assigner chaque objet du tableau à une variable "item"
-    - Afficher les champs avec "item.handleDuChamp" #}
-    {% for item in latestProjects %}
-        <article>
+	{# Affichage du titre et de l'intro #}
+	<div class="c-pagesection  c-pagesection--brand">
+    <div class="l-container">
+      {# Add spans to big title
+        - prendre la valeur de départ entry.commonPageBigTitle
+        - remplacer "{{{" par "<span>" et "}}}" par "</span>"
+        - par défaut Twig encode les tags HTML (par sécurité). Ici on ne veut pas qu'il les encode. Pour cela on utilise le filtre "|raw" à l'affichage. #}
+      {% set bigTitle = entry.commonPageBigTitle|replace({"{{{": "<span>", "}}}": "</span>"}) %}
+      <h1 class="c-pagetitle">{{ bigTitle|raw }}</h1>
 
-            {# les champs relationnels dans Craft retournent TOOUJOURS un tableau. Ici on doit prendre le premier (et le seul) asset dans ce tableau (notre image). C'est ce qu'on fait en utilisant la méthode one() #}
-            {% set img = item.projectImage.one() %}
+      <div class="c-homeintro">
+        {# champs texte donc on met des balises <p></p> autour (pas de balise si c'était un champs Redactor car celui-ci génère déjà du HTML) #}
+        <p>{{ entry.homeIntro }}</p>
+        <p><a class="c-ctalink  c-ctalink--invert" href="/projects/">Our projects {% include "_svg/rightarrow.svg" %}</a></p>
+      </div>
+    </div>
+	</div>
 
-            {# si l'image existe / posède une valeur, on l'affiche #}
-            {% if img %}
-                <p>
-                    <img src="{{ img.getUrl({ width: 450, height: 600 }) }}"
-                         srcset="{{ img.getUrl({ width: 450, height: 600 }) }} 450w,
-                                 {{ img.getUrl({ width: 600, height: 800 }) }} 600w"
-                         sizes="(min-width: 1500px) 350px,
-                                (min-width: 1024px) 25vw,
-                                (min-width: 500px) 50vw,
-                                100vw"
-                         alt="">
-                </p>
-            {% endif %}
-            <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
-            <p>{{ item.projectTagline }}</p>
-        </article>
-    {% endfor %}
+	{# 
+	- @TODO: review Matrix field
+	- add template around this
+	#}
+	<h2>{{ entry.homeWedoTitle }}</h2>
+	<p>{{ entry.homeWedoIntro }}</p>
+	{# un seul type de block donc on boucle sur les blocks #}
+	{% for mxBlock in entry.homeWeDoSkills %}
+    {# pour chaque block on affiche les champs #}
+    <h1> {{ mxBlock.mxSkillTitle }}</h1>
+    {{ mxBlock.mxSkillDescription}}
+	{% endfor %}
+
+
+	{# Banner
+    - tous les champs relationnels dans Craft (ici un champs assets) renvoient un tableau d'objet, même si il n'y a qu'un objet dedans
+    - ici on veut le premier objet du tableau (l'image de banner) donc on utilise la méthode .one() #}
+	{% set img = entry.homeBanner.one() %}
+	{% if img %}
+    <div class="c-banner">
+    <img src="{{ img.getUrl({ width: 800, height: 450 }) }}"
+         srcset="{{ img.getUrl({ width: 800, height: 450 }) }} 800w,
+                 {{ img.getUrl({ width: 1024, height: 576 }) }} 1024w,
+                 {{ img.getUrl({ width: 1500, height: 844 }) }} 1500w,"
+         sizes="100vw"
+         loading="lazy"
+         decoding="async"
+         width="1500"
+         height="844"
+         alt="people in the office">
+    </div>
+	{% endif %}
+
+	{# Projets
+  - aller prendre toutes les entries liées à la section projets
+	- les classer par date de publication ascendantes
+	- limiter le tableau d'entries à 4 entries
+	- Craft renvoie un tableau d'objets, 
+			- chaque handle de champs est une key de cet objet
+			- chaque valeur de champs est une valeur qui correspond à la key #}
+	{% set latestProjects = craft.entries()
+    .section("projects")
+    .orderBy("postDate DESC")
+    .limit(4)
+    .all() %}
+
+	{# Afficher les champs des projets dont on a besoin
+	- Boucler sur la tableau d'objets
+	- Assigner chaque objet du tableau à une variable "item"
+	- Afficher les champs avec "item.handleDuChamp" #}
+	{% for item in latestProjects %}
+    <article>
+      {# les champs relationnels dans Craft retournent TOOUJOURS un tableau. Ici on doit prendre le premier (et le seul) asset dans ce tableau (notre image). C'est ce qu'on fait en utilisant la méthode one() #}
+      {% set img = item.projectImage.one() %}
+
+      {# si l'image existe / posède une valeur, on l'affiche #}
+      {% if img %}
+        <p>
+          <img src="{{ img.getUrl({ width: 450, height: 600 }) }}"
+               srcset="{{ img.getUrl({ width: 450, height: 600 }) }} 450w,
+                       {{ img.getUrl({ width: 600, height: 800 }) }} 600w"
+               sizes="(min-width: 1500px) 350px,
+                      (min-width: 1024px) 25vw,
+                      (min-width: 500px) 50vw,
+                      100vw"
+               alt="">
+        </p>
+      {% endif %}
+      <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+      <p>{{ item.projectTagline }}</p>
+    </article>
+	{% endfor %}
 {% endblock %}

@@ -1,9 +1,39 @@
-dateModified: 1668616263
+dateModified: 1669222962
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      type: native
+    -
+      heading: PAGES
+      type: heading
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: singles
+      tableAttributes:
+        - link
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      key: 'section:59b7e146-e8a9-4b01-8c5b-96cdb9126900' # Projects
+      type: native
 email:
   fromEmail: jercoupe@gmail.com
   fromName: 'Zodiakagency Craft'
   transportType: craft\mail\transportadapters\Sendmail
 fs:
+  bannersImages:
+    hasUrls: true
+    name: 'Banners Images'
+    settings:
+      path: '@assetsBasePath/banners_images'
+    type: craft\fs\Local
+    url: '@assetsBaseUrl/banners_images/'
   projectsImages:
     hasUrls: true
     name: 'Projects Images'
@@ -13,14 +43,27 @@ fs:
     url: '@assetsBaseUrl/projects_images'
 meta:
   __names__:
+    0a1ccdef-776e-4489-b7a0-5bab7115bcdf: Intro # Intro
+    0d0272f3-d1ad-49c0-ba42-20d339e3ec04: 'Page Big Title' # Page Big Title
+    1c129203-3226-44df-8661-e261ba8feca9: homepage # homepage
+    5e368438-8cd5-45ea-a482-68e78c333062: Banner # Banner
+    6ef3fe51-685a-4e26-8de6-9bb92fc4e7e0: Skills # Skills
     9a47d3d4-06fa-448c-a974-f78b60fab694: 'Zodiakagency Craft' # Zodiakagency Craft
+    15de42af-6dbd-42c1-99d2-a54309eda276: 'Banners Images' # Banners Images
+    18ff1bed-af09-450d-a02f-2eb6f57a5866: Title # Title
     57d5d656-f1bc-4e49-b6e7-237035606edb: Image # Image
     59b7e146-e8a9-4b01-8c5b-96cdb9126900: Projects # Projects
+    605fda05-d777-4511-9412-031b126e3c31: homepage # homepage
+    633fee1d-baee-40f7-a100-07339748b36f: home # home
     715fe2d6-a473-4909-be0a-efaa2280709c: Introduction # Introduction
+    6303d516-27d1-4c46-a262-8961d263c2eb: Intro # Intro
     255693df-55b5-4718-9ddb-68fa1ada246d: projects # projects
     71616991-7357-4326-a812-50fe9892f288: Tagline # Tagline
+    ab4ca841-ee46-4f8d-9bd5-0ad4ed598c73: 'What we do' # What we do
     b003f777-25b4-4ecf-90b5-3e954ca2dc8a: 'Projects Images' # Projects Images
     bbb88a10-79f6-4e02-987b-330fa874eb7e: Default # Default
+    bc1649ee-a883-4a06-ba32-280da43d1797: Skill # Skill
+    c26390ae-27ab-44a4-b520-d231a9a51e38: Description # Description
     eb57f4c8-ab1b-49ab-8751-319e54b8fac2: 'Zodiakagency Craft' # Zodiakagency Craft
     f684ff07-12b7-4d89-a0b8-4431a99fa54a: Common # Common
 plugins:

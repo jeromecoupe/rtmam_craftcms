@@ -1,0 +1,86 @@
+field: 6ef3fe51-685a-4e26-8de6-9bb92fc4e7e0 # Skills
+fieldLayouts:
+  53817fc8-cb64-4106-a1ed-854c7b776aef:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 18ff1bed-af09-450d-a02f-2eb6f57a5866 # Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 61fe4b88-db80-471d-b1f5-41b3d0b3e15f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c26390ae-27ab-44a4-b520-d231a9a51e38 # Description
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 75702f0e-ca9e-458b-a4f5-44a4ba860259
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 456c7410-88f4-489a-b8f8-08315731b47f
+        userCondition: null
+fields:
+  18ff1bed-af09-450d-a02f-2eb6f57a5866: # Title
+    columnSuffix: bhbambpc
+    contentColumnType: string(256)
+    fieldGroup: null
+    handle: mxSkillTitle
+    instructions: 'Type your title here.'
+    name: Title
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 64
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c26390ae-27ab-44a4-b520-d231a9a51e38: # Description
+    columnSuffix: xqfznzqq
+    contentColumnType: text
+    fieldGroup: null
+    handle: mxSkillDescription
+    instructions: 'G la haine c''est 3-0 Espagne'
+    name: Description
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: null
+      purifyHtml: true
+      redactorConfig: Simple.json
+      removeEmptyTags: false
+      removeInlineStyles: false
+      removeNbsp: false
+      showHtmlButtonForNonAdmins: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: mxBlockSkill
+name: Skill
+sortOrder: 1

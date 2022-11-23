@@ -1,0 +1,19 @@
+columnSuffix: ekkomgbh
+contentColumnType: string(480)
+fieldGroup: 633fee1d-baee-40f7-a100-07339748b36f # home
+handle: homeWedoIntro
+instructions: null
+name: Intro
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 120
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

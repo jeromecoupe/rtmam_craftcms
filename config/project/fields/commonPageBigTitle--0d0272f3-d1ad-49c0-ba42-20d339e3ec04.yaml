@@ -1,0 +1,19 @@
+columnSuffix: njykwykv
+contentColumnType: string(256)
+fieldGroup: f684ff07-12b7-4d89-a0b8-4431a99fa54a # Common
+handle: commonPageBigTitle
+instructions: 'If you want word in color, surround them with `{{{word}}}`'
+name: 'Page Big Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 64
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

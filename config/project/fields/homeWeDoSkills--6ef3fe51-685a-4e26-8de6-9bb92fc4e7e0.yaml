@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 633fee1d-baee-40f7-a100-07339748b36f # home
+handle: homeWeDoSkills
+instructions: 'Hello here you have to type your skills'
+name: Skills
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_homewedoskills}}'
+  maxBlocks: 5
+  minBlocks: 1
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
