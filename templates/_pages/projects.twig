@@ -1,0 +1,81 @@
+{# layout #}
+{% extends "_layouts/base.twig" %}
+
+{# content #}
+{% block main %}
+
+  {# page title #}
+  <div class="c-pagesection  c-pagesection--brand">
+    <div class="l-container">
+      {# @TODO: create macro for this #}
+      {% set bigTitle = entry.commonPageBigTitle|replace({"{{{": "<span>", "}}}": "</span>"}) %}
+      <h1 class="c-pagetitle  u-mb-none">{{ bigTitle|raw }}</h1>
+    </div>
+  </div>
+
+  {# categories and projects #}
+  <div class="c-pagesection">
+    <div class="l-container">
+      
+      {% set allProjects = craft.entries()
+        .section("projects")
+        .orderBy("postDate DESC")
+        .limit(12) %}
+
+      {# paginate 
+        - on lui passe une query / requête Craft dans laquelle il y a un paramètre limit (pas de .all() ou .one() etc au bout)
+        - il renvoie deux choses
+          1. un objet qui contieznt toutes les infos pour faire une interface de pagination
+          2. un tableau d'objet qui contient nos entries pour chaque page. Ce tableau comporte autant d'objets par page que spécifié par le paramètre limit
+        - paginate va aussi automatiquement créer du routing pour que les URL /p1 /p2 /p3 mènent vers le même template que celui sur lequel l'interface de pagination se trouve  
+      #}
+      {% paginate allProjects as pagination, projects %}
+      
+      {# on boucle sur les entries de la page #}
+      {% for item in projects %}
+        {% if loop.first %}<ul class="l-grid  l-grid--2cols@small  l-grid--3cols@medium  l-grid--4cols@large">{% endif %}
+
+          <li>
+            {% include "_components/projectcard.twig" with {
+              project: item
+            } only %}
+          </li>
+
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+
+      {# pagination #}
+      {% if pagination.totalPages > 1 %}
+        <nav aria-label="pagination">
+          <ul class="c-pagination">
+
+            {# link to first page #}
+            {% if pagination.prevUrl %}
+              <li class="c-pagination__item"><a class="c-pagination__previous" href="{{ pagination.firstUrl }}">First</a></li>
+            {% endif %}
+
+            {# link to previous page #}
+            {% for page, url in pagination.getPrevUrls(1) %}
+              <li class="c-pagination__item"><a class="c-pagination__link" href="{{ url }}">{{ page }}</a></li>
+            {% endfor %}
+
+            {# link to current page #}
+            <li class="c-pagination__item"><a class="c-pagination__link  is-active" href="#">{{ pagination.currentPage }}</a></li>
+
+            {# link to next page #}
+            {% for page, url in pagination.getNextUrls(1) %}
+              <li class="c-pagination__item"><a class="c-pagination__link" href="{{ url }}">{{ page }}</a></li>
+            {% endfor %}
+
+            {# link to last page #}
+            {% if pagination.nextUrl %}
+              <li class="c-pagination__item"><a class="c-pagination__next" href="{{ pagination.lastUrl }}">Last</a></li>
+            {% endif %}
+
+          </ul>
+        </nav>
+      {% endif %}
+
+    </div>
+  </div>
+{% endblock %}

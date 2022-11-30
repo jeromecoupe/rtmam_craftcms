@@ -1,7 +1,7 @@
 columnSuffix: null
 contentColumnType: string
 fieldGroup: 633fee1d-baee-40f7-a100-07339748b36f # home
-handle: homeWeDoSkills
+handle: homeWedoSkills
 instructions: 'Hello here you have to type your skills'
 name: Skills
 searchable: false

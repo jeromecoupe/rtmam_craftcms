@@ -1,13 +1,13 @@
-columnSuffix: klkunghe
-contentColumnType: string(128)
+columnSuffix: gqbtibal
+contentColumnType: string(512)
 fieldGroup: 633fee1d-baee-40f7-a100-07339748b36f # home
-handle: homeWedoTitle
+handle: homeProjectsIntro
 instructions: null
-name: 'We do title'
+name: 'Projects Intro'
 searchable: false
 settings:
   byteLimit: null
-  charLimit: 32
+  charLimit: 128
   code: false
   columnType: null
   initialRows: 4

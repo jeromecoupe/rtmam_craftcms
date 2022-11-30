@@ -58,7 +58,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: mxSkillDescription
-    instructions: 'G la haine c''est 3-0 Espagne'
+    instructions: 'Type your description'
     name: Description
     searchable: false
     settings:

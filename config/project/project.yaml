@@ -1,4 +1,4 @@
-dateModified: 1669222962
+dateModified: 1669822531
 elementSources:
   craft\elements\Entry:
     -
@@ -43,9 +43,10 @@ fs:
     url: '@assetsBaseUrl/projects_images'
 meta:
   __names__:
-    0a1ccdef-776e-4489-b7a0-5bab7115bcdf: Intro # Intro
+    0a1ccdef-776e-4489-b7a0-5bab7115bcdf: 'We do Intro' # We do Intro
     0d0272f3-d1ad-49c0-ba42-20d339e3ec04: 'Page Big Title' # Page Big Title
     1c129203-3226-44df-8661-e261ba8feca9: homepage # homepage
+    3d3b4e08-cec8-4e1f-9bcb-9568a9e497c5: 'Projects Title' # Projects Title
     5e368438-8cd5-45ea-a482-68e78c333062: Banner # Banner
     6ef3fe51-685a-4e26-8de6-9bb92fc4e7e0: Skills # Skills
     9a47d3d4-06fa-448c-a974-f78b60fab694: 'Zodiakagency Craft' # Zodiakagency Craft
@@ -59,11 +60,14 @@ meta:
     6303d516-27d1-4c46-a262-8961d263c2eb: Intro # Intro
     255693df-55b5-4718-9ddb-68fa1ada246d: projects # projects
     71616991-7357-4326-a812-50fe9892f288: Tagline # Tagline
-    ab4ca841-ee46-4f8d-9bd5-0ad4ed598c73: 'What we do' # What we do
+    a7687043-975c-4f08-8cfd-156d3bbe21bd: 'Projects page' # Projects page
+    ab4ca841-ee46-4f8d-9bd5-0ad4ed598c73: 'We do title' # We do title
     b003f777-25b4-4ecf-90b5-3e954ca2dc8a: 'Projects Images' # Projects Images
     bbb88a10-79f6-4e02-987b-330fa874eb7e: Default # Default
     bc1649ee-a883-4a06-ba32-280da43d1797: Skill # Skill
     c26390ae-27ab-44a4-b520-d231a9a51e38: Description # Description
+    cc467438-c5ba-458f-9ebc-b49b5f094d25: 'Projects page' # Projects page
+    cf2e8d9c-d608-4aa8-955c-91e5111f9985: 'Projects Intro' # Projects Intro
     eb57f4c8-ab1b-49ab-8751-319e54b8fac2: 'Zodiakagency Craft' # Zodiakagency Craft
     f684ff07-12b7-4d89-a0b8-4431a99fa54a: Common # Common
 plugins:

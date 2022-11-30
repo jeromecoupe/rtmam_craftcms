@@ -73,7 +73,7 @@ fieldLayouts:
             userCondition: null
           -
             elementCondition: null
-            fieldUid: ab4ca841-ee46-4f8d-9bd5-0ad4ed598c73 # What we do
+            fieldUid: ab4ca841-ee46-4f8d-9bd5-0ad4ed598c73 # We do title
             instructions: null
             label: null
             required: true
@@ -85,7 +85,7 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 0a1ccdef-776e-4489-b7a0-5bab7115bcdf # Intro
+            fieldUid: 0a1ccdef-776e-4489-b7a0-5bab7115bcdf # We do Intro
             instructions: null
             label: null
             required: true
@@ -104,6 +104,35 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 50779577-51d7-4acb-90e3-e28f182c9d23
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 55ed6123-e9f5-47c6-b90e-4e8c8508c333
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 3d3b4e08-cec8-4e1f-9bcb-9568a9e497c5 # Projects Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8364d061-9fcd-4e57-bf09-356ae6d604b9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cf2e8d9c-d608-4aa8-955c-91e5111f9985 # Projects Intro
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a072f1d1-c534-4f9d-a71e-65bd03faeaa6
             userCondition: null
             warning: null
             width: 100

@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: projectsPage
+name: 'Projects page'
+propagationMethod: all
+siteSettings:
+  9a47d3d4-06fa-448c-a974-f78b60fab694: # Zodiakagency Craft
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/projects.twig
+    uriFormat: projects
+type: single

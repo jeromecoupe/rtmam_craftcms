@@ -1,0 +1,55 @@
+fieldLayouts:
+  60cf9e37-8fae-4359-a6c1-9e509e408f05:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e305ca8d-aac1-4569-a797-61aad64da668
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0d0272f3-d1ad-49c0-ba42-20d339e3ec04 # Page Big Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 40552dcb-2bcd-4bdc-af13-27536deb8ddd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e95e99d3-d861-4284-bc7a-df2c271e790d
+        userCondition: null
+handle: projectsPage
+hasTitleField: false
+name: 'Projects page'
+section: a7687043-975c-4f08-8cfd-156d3bbe21bd # Projects page
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

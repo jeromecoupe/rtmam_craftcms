@@ -3,7 +3,7 @@ contentColumnType: string(480)
 fieldGroup: 633fee1d-baee-40f7-a100-07339748b36f # home
 handle: homeWedoIntro
 instructions: null
-name: Intro
+name: 'We do Intro'
 searchable: false
 settings:
   byteLimit: null
