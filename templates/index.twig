@@ -30,32 +30,30 @@
 	{% if img %}
     <div class="c-banner">
       <img src="{{ img.getUrl({ width: 800, height: 450 }) }}"
-          srcset="{{ img.getUrl({ width: 800, height: 450 }) }} 800w,
-                  {{ img.getUrl({ width: 1024, height: 576 }) }} 1024w,
-                  {{ img.getUrl({ width: 1500, height: 844 }) }} 1500w,"
-          sizes="100vw"
-          loading="lazy"
-          decoding="async"
-          width="1500"
-          height="844"
-          alt="people in the office">
+           srcset="{{ img.getUrl({ width: 800, height: 450 }) }} 800w,
+                   {{ img.getUrl({ width: 1024, height: 576 }) }} 1024w,
+                   {{ img.getUrl({ width: 1500, height: 844 }) }} 1500w,"
+           sizes="100vw"
+           loading="lazy"
+           decoding="async"
+           width="1500"
+           height="844"
+           alt="people in the office">
     </div>
 	{% endif %}
 
-	{# What We do
-	- @TODO: review Matrix field
-	- add template around this
-	#}
+	{# What We do #}
   <div class="c-pagesection">
     <div class="l-container">
 
         <div class="l-split">
-          <h2 class="c-smalltitle">{{ entry.homeWedoTitle }}</h2>
           <div>
-
+            <h2 class="c-smalltitle">{{ entry.homeWedoTitle }}</h2>
+          </div>
+          <div>
             <p class="c-intro">{{ entry.homeWedoIntro }}</p>
             
-            {# un seul type de block donc on boucle sur les blocks #}
+            {# un seul type de block donc on boucle: (pas besoin de switch / test) #}
 	          {% for mxBlock in entry.homeWedoSkills.all() %}
               {% if loop.first %}<ul class="c-vlist  c-vlist--m">{% endif %}
                 <li>
@@ -78,7 +76,6 @@
 
 
 	{# Projets #}
-
   <div class="c-pagesection">
     <div class="l-container">
 
