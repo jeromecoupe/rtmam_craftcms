@@ -1,6 +1,24 @@
 {# layout #}
 {% extends "_layouts/base.twig" %}
 
+{# 
+- on charge le même template avec deux URL / dans deux cas
+
+1. On charge ce template quand on a une URL qui correspond à une single (la page projects) > Craft nous donne une variable "entry"
+2. On charge ce template quand on a une URL qui correspond à une categorie > Craft nous donne une variable "category"
+
+PROBLEME: on fait appel à une variable entry qui est créée par Craft UNIQUEMENT si ce template est chargé via une URL d'entry / single
+
+SOLUTION: si variable entry pas définie, on la défini nous même
+#}
+
+{% if entry is not defined %}
+  {% set entry = craft.entries()
+    .section("projectsPage")
+    .one() %}
+{% endif %}
+
+
 {# content #}
 {% block main %}
 
@@ -16,11 +34,39 @@
   {# categories and projects #}
   <div class="c-pagesection">
     <div class="l-container">
-      
+
+      {# get categories #}
+      {# aller chercher toutes les IDS de projets, ne prendre que les categories qui sont liées à au moins une ID de projet #}
+      {% set allProjectsIds = craft.entries()
+        .section("projects")
+        .ids() %}
+
+      {% set projectsCategories = craft.categories()
+        .group("projectTypes")
+        .relatedTo(allProjectsIds)
+        .all() %}
+
+      {% for item in projectsCategories %}
+        {% if loop.first %}<ul>{% endif %}
+          {% if loop.first %}<li><a href="/projects/">All types</a></li>{% endif %}
+          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {% if loop.last %}</ul>{% endif %}
+      {% endfor %}
+
+      {# list project types categories #}
+
+      {# get all projects (query only, no .all() etc.) #}  
       {% set allProjects = craft.entries()
         .section("projects")
         .orderBy("postDate DESC")
         .limit(12) %}
+      
+      {# si on est sur une URL de categorie, Craft défini une variable "category" automatiquement. 
+      
+      Si cette variable est définie, on utilise {% do %} pour ajouter un paramètre relatedTo(category) à notre query qui va chercher les projets #}
+      {% if category is defined %}
+        {% do allProjects.relatedTo(category) %}
+      {% endif %}
 
       {# paginate 
         - on lui passe une query / requête Craft dans laquelle il y a un paramètre limit (pas de .all() ou .one() etc au bout)

@@ -3,5 +3,5 @@
 /vendor
 .DS_Store
 
-/web/uploads
-!/web/uploads/.gitkeep
+web/uploads
+!web/uploads/.gitkeep

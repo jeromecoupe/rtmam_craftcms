@@ -1,4 +1,4 @@
-dateModified: 1669822531
+dateModified: 1670425170
 elementSources:
   craft\elements\Entry:
     -
@@ -47,6 +47,7 @@ meta:
     0d0272f3-d1ad-49c0-ba42-20d339e3ec04: 'Page Big Title' # Page Big Title
     1c129203-3226-44df-8661-e261ba8feca9: homepage # homepage
     3d3b4e08-cec8-4e1f-9bcb-9568a9e497c5: 'Projects Title' # Projects Title
+    4b02ef51-9918-44e9-bb7d-d3f324f3f3f5: Types # Types
     5e368438-8cd5-45ea-a482-68e78c333062: Banner # Banner
     6ef3fe51-685a-4e26-8de6-9bb92fc4e7e0: Skills # Skills
     9a47d3d4-06fa-448c-a974-f78b60fab694: 'Zodiakagency Craft' # Zodiakagency Craft
@@ -54,6 +55,7 @@ meta:
     18ff1bed-af09-450d-a02f-2eb6f57a5866: Title # Title
     57d5d656-f1bc-4e49-b6e7-237035606edb: Image # Image
     59b7e146-e8a9-4b01-8c5b-96cdb9126900: Projects # Projects
+    69df7443-c58f-4525-a798-63aa468b875d: 'Project Types' # Project Types
     605fda05-d777-4511-9412-031b126e3c31: homepage # homepage
     633fee1d-baee-40f7-a100-07339748b36f: home # home
     715fe2d6-a473-4909-be0a-efaa2280709c: Introduction # Introduction
