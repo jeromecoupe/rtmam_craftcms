@@ -1,0 +1,19 @@
+columnSuffix: wqvugioj
+contentColumnType: string(96)
+fieldGroup: 5af42c9e-fb57-4c1b-b4ae-7c1329c92a09 # nav
+handle: navLabel
+instructions: null
+name: Label
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 24
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

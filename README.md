@@ -7,7 +7,7 @@ A project to learn Craft CMS in 2022 with my beloved RTMAM students.
 - [x] home page
 - [x] project component
 - [x] projects page: paginated projects list
-- [ ] projects page: categories and filtering
+- [x] projects page: categories and filtering
 - [ ] Detail projects (Matrix field)
-- [ ] Navigations as structure
-- [ ] Empty about page
+- [x] Navigations as structure
+- [x] Empty about page

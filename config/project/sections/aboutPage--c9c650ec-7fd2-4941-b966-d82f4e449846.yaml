@@ -1,12 +1,12 @@
 defaultPlacement: end
 enableVersioning: true
-handle: homePage
-name: 'Home Page'
+handle: aboutPage
+name: 'About Page'
 propagationMethod: all
 siteSettings:
   9a47d3d4-06fa-448c-a974-f78b60fab694: # Zodiakagency Craft
     enabledByDefault: true
     hasUrls: true
-    template: index.twig
-    uriFormat: __home__
+    template: _pages/about.twig
+    uriFormat: about
 type: single

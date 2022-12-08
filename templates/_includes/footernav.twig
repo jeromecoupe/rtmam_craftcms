@@ -1,9 +1,27 @@
 <nav aria-label="footer navigation" id="footernav">
 
-  <ul class="c-footernav">
-    <li class="c-footernav__item"><a class="c-footernav__link" href="/">Home</a></li>
-    <li class="c-footernav__item"><a class="c-footernav__link" href="/projects/">Projects</a></li>
-    <li class="c-footernav__item"><a class="c-footernav__link" href="/about/">About</a></li>
-  </ul>
+  {# voir .templates/_includes/mainnav.twig #}
+  {% set allNav = craft.entries()
+    .section("mainNav")
+    .all() %}
+
+  {% for item in allNav %}
+    {% if loop.first %}<ul class="c-footernav">{% endif %}
+
+      {% set navEntry = item.navEntry.one() %}
+      {% set navUrl = navEntry.url %}
+      {% set navId = navEntry.id %}
+
+      {% set currentAria = "" %}
+      {% if navId == entry.id %}
+        {% set currentAria = "aria-current=\"page\"" %}
+      {% endif %}
+
+      <li class="c-footernav__item">
+        <a class="c-footernav__link" {{ currentAria|raw }} href="{{ navUrl }}">{{ item.navLabel }}</a>
+      </li>
+
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
 
 </nav>

@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: mainNav
+name: 'Main Navigation'
+propagationMethod: all
+siteSettings:
+  9a47d3d4-06fa-448c-a974-f78b60fab694: # Zodiakagency Craft
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: b104045f-86e1-423f-8652-9f7d9ee5301f
+type: structure

@@ -141,8 +141,8 @@ fieldLayouts:
         userCondition: null
 handle: homePage
 hasTitleField: false
-name: homepage
-section: 1c129203-3226-44df-8661-e261ba8feca9 # homepage
+name: 'Home Page'
+section: 1c129203-3226-44df-8661-e261ba8feca9 # Home Page
 sortOrder: 1
 titleFormat: Homepage
 titleTranslationKeyFormat: null

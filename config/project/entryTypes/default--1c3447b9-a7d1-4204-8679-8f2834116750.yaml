@@ -1,0 +1,67 @@
+fieldLayouts:
+  e6ec759f-b8dc-4253-b795-6e7b0bae37a5:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: b161a064-65d2-4dea-8217-c4b96b79ec91
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1abc90c2-f3ed-49ba-8f78-719dba025d77 # Label
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7e814e2f-fcc5-4708-a03a-37fdb3acd522
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 83f58274-9755-4238-9912-b837fdfc3a97 # Linked Entry
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec40e6d0-052d-4650-993f-7f83f0d90388
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e851830f-e133-4b07-a6de-3180a6a6ac5a
+        userCondition: null
+handle: default
+hasTitleField: false
+name: Default
+section: b84caf5d-ef5a-4d0b-9fc0-853488a722af # Main Navigation
+sortOrder: 1
+titleFormat: '{navLabel}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,17 @@
+{# layout #}
+{% extends "_layouts/base.twig" %}
+
+{# content #}
+{% block main %}
+
+  {# page title #}
+  <div class="c-pagesection  c-pagesection--brand">
+    <div class="l-container">
+      {# @TODO: create macro for this #}
+      {% set bigTitle = entry.commonPageBigTitle|replace({"{{{": "<span>", "}}}": "</span>"}) %}
+      <h1 class="c-pagetitle  u-mb-none">{{ bigTitle|raw }}</h1>
+    </div>
+  </div>
+
+  <p>About us</p>
+{% endblock %}

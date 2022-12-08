@@ -18,6 +18,11 @@ SOLUTION: si variable entry pas définie, on la défini nous même
     .one() %}
 {% endif %}
 
+{# si pas de variable category defined, category == "all"
+utilisé dans le liste des categories pour déterminer quelle est la categorie active #}
+{% if category is not defined %}
+  {% set category = "all" %}
+{% endif %}
 
 {# content #}
 {% block main %}
@@ -34,7 +39,7 @@ SOLUTION: si variable entry pas définie, on la défini nous même
   {# categories and projects #}
   <div class="c-pagesection">
     <div class="l-container">
-
+      
       {# get categories #}
       {# aller chercher toutes les IDS de projets, ne prendre que les categories qui sont liées à au moins une ID de projet #}
       {% set allProjectsIds = craft.entries()
@@ -46,25 +51,56 @@ SOLUTION: si variable entry pas définie, on la défini nous même
         .relatedTo(allProjectsIds)
         .all() %}
 
-      {% for item in projectsCategories %}
-        {% if loop.first %}<ul>{% endif %}
-          {% if loop.first %}<li><a href="/projects/">All types</a></li>{% endif %}
-          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-        {% if loop.last %}</ul>{% endif %}
-      {% endfor %}
+      <div class="c-categories">
+        <nav>
+          <h2 class="c-categories__title">Types of work</h2>
+          {% for item in projectsCategories %}
+            
+            {# Full version #}
+            {% set currentClass = "" %}
+            {% set currentAria = "" %}
+            {% set currentAllAria = "" %}
+            {% set currentAllClass = "" %}
+            {% if category == "all" %}
+              {% set currentAllClass = "is-current" %}
+              {% set currentAllAria = "aria-current=\"page\"" %}
+            {% endif %}
+            {% if category != "all" and item.id == category.id %}
+              {% set currentClass = "is-current" %}
+              {% set currentAria = "aria-current=\"page\"" %}
+            {% endif %}
 
-      {# list project types categories #}
+            {# short version en utilisant un ternary operator. 
+            Structure du ternary operator:
+            set variable (condition) ? si condition vraie : si condition fausse
+            {% set currentAllClass = (category == "all") ? "is-current" : "" %}
+            {% set currentAllAria = (category == "all") ? "aria-current=\"page\"" : "" %}
+            {% set currentClass = (category != "all" and item.id == category.id) ? "is-current" : "" %}
+            {% set currentAria = (category != "all" and item.id == category.id) ? "aria-current=\"page\"" : "" %} #}
+
+            {% if loop.first %}<ul class="c-catlist">{% endif %}
+              
+              {# all categories link #}
+              {% if loop.first %}<li class="c-catlist__item"><a class="c-catlist__link {{ currentAllClass }}" {{ currentAllAria|raw }} href="/projects/">All types</a></li>{% endif %}
+
+              {# categories links #}
+              <li class="c-catlist__item"><a class="c-catlist__link {{ currentClass }}" {{ currentAria|raw }} href="{{ item.url }}">{{ item.title }}</a></li>
+
+            {% if loop.last %}</ul>{% endif %}
+          {% endfor %}
+        </nav>
+      </div>
 
       {# get all projects (query only, no .all() etc.) #}  
       {% set allProjects = craft.entries()
         .section("projects")
-        .orderBy("postDate DESC")
+        .orderBy("title DESC")
         .limit(12) %}
       
       {# si on est sur une URL de categorie, Craft défini une variable "category" automatiquement. 
       
       Si cette variable est définie, on utilise {% do %} pour ajouter un paramètre relatedTo(category) à notre query qui va chercher les projets #}
-      {% if category is defined %}
+      {% if category != "all" %}
         {% do allProjects.relatedTo(category) %}
       {% endif %}
 

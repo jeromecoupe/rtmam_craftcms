@@ -1,11 +1,22 @@
+{# ==============================
+Variables
+============================== #}
+
+{% set url = project.url ?? null %}
+{% set img = project.projectImage.one() ?? null %}
+{% set title = project.title ?? null %}
+{% set tagline = project.projectTagline ?? null %}
+
+{# ==============================
+template
+============================== #}
 
 <article class="c-projectcard">
-  <a class="c-projectcard__link" href="{{ project.url }}">
+  <a class="c-projectcard__link" href="{{ url }}">
     <div class="c-projectcard__media">
       {# projectImage est un champs relationnel (vers des assets)
         - Craft va TOUJOURS renvoyer un tableau pour tous les champs relationnels
         - Il faut aller chercher le premier élément de ce tableau avec .one() #}
-      {% set img = project.projectImage.one() %}
       {% if img %}
         <img src="{{ img.getUrl({ width: 450, height: 600 }) }}"
               srcset="{{ img.getUrl({ width: 450, height: 600 }) }} 450w,
@@ -22,8 +33,8 @@
     
     </div>
     <div class="c-projectcard__body">
-      <h3 class="c-projectcard__title">{{ project.title }}</h3>
-      <p class="c-projectcard__tagline">{{ project.projectTagline }}</p>
+      <h3 class="c-projectcard__title">{{ title }}</h3>
+      <p class="c-projectcard__tagline">{{ tagline }}</p>
     </div>
   </a>
 </article>
