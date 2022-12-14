@@ -1,0 +1,19 @@
+{# =======================
+variables
+======================= #}
+
+{% set mxBlock = mxBlock ?? null %}
+
+{% set title = mxBlock.mxTextTitle ?? null %}
+{% set content = mxBlock.mxTextContent ?? null %}
+
+{# =======================
+template
+======================= #}
+
+<div class="c-casemodule">
+  <div class="l-container  l-container--copy">
+    <h2 class="c-h3">{{ title }}</h2>
+    {{ content }}
+  </div>
+</div>

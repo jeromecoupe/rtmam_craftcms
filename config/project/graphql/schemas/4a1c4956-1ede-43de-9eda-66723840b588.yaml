@@ -1,0 +1,5 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'sections.59b7e146-e8a9-4b01-8c5b-96cdb9126900:read' # Projects
+  - 'entrytypes.bbb88a10-79f6-4e02-987b-330fa874eb7e:read' # Default

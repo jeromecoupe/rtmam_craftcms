@@ -1,0 +1,106 @@
+field: 3c1b24b7-6b22-4438-9eaf-b55e31583a22 # Body
+fieldLayouts:
+  f108d0c6-53b2-4484-be40-88586b624483:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5b092f20-28c2-421f-be74-7c3893256787 # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e17bd02c-c990-4d2d-bbba-9c96d93e2bd0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 93ad530f-87db-431e-84ff-3354ac3f7bc8 # Caption
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 03b536ef-7cb4-4b57-b4d7-d9410dabffe0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 565701ed-ad0b-478b-be89-0db559ee90e8
+        userCondition: null
+fields:
+  5b092f20-28c2-421f-be74-7c3893256787: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: mxImageImg
+    instructions: null
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: false
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:b003f777-25b4-4ecf-90b5-3e954ca2dc8a' # Projects Images
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maxRelations: 1
+      minRelations: 1
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:b003f777-25b4-4ecf-90b5-3e954ca2dc8a' # Projects Images
+      restrictedLocationSubpath: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Asset
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\assets\AssetCondition
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      source: null
+      sources:
+        - 'volume:b003f777-25b4-4ecf-90b5-3e954ca2dc8a' # Projects Images
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  93ad530f-87db-431e-84ff-3354ac3f7bc8: # Caption
+    columnSuffix: pntpimed
+    contentColumnType: string(1024)
+    fieldGroup: null
+    handle: mxImageCaption
+    instructions: null
+    name: Caption
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 256
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: blockImage
+name: Image
+sortOrder: 3

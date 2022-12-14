@@ -2,6 +2,12 @@
 Variables
 ============================== #}
 
+{# projectImage est un champs relationnel (vers des assets)
+  - Craft va TOUJOURS renvoyer un tableau pour tous les champs relationnels
+  - Il faut aller chercher le premier élément de ce tableau avec .one() #}
+
+{% set project = project ?? null %}
+
 {% set url = project.url ?? null %}
 {% set img = project.projectImage.one() ?? null %}
 {% set title = project.title ?? null %}
@@ -14,21 +20,18 @@ template
 <article class="c-projectcard">
   <a class="c-projectcard__link" href="{{ url }}">
     <div class="c-projectcard__media">
-      {# projectImage est un champs relationnel (vers des assets)
-        - Craft va TOUJOURS renvoyer un tableau pour tous les champs relationnels
-        - Il faut aller chercher le premier élément de ce tableau avec .one() #}
       {% if img %}
         <img src="{{ img.getUrl({ width: 450, height: 600 }) }}"
-              srcset="{{ img.getUrl({ width: 450, height: 600 }) }} 450w,
-                      {{ img.getUrl({ width: 600, height: 800 }) }} 600w" 
-              sizes="(min-width: 1500px) 345px,
-                    (min-width: 1024px) 25vw
-                    (min-width: 500px) 50vw,
-                    100vw"
-              class="o-fluidimg"
-              alt=""
-              width="600"
-              height="800">
+             srcset="{{ img.getUrl({ width: 450, height: 600 }) }} 450w,
+                     {{ img.getUrl({ width: 600, height: 800 }) }} 600w" 
+             sizes="(min-width: 1500px) 345px,
+                   (min-width: 1024px) 25vw
+                   (min-width: 500px) 50vw,
+                   100vw"
+             class="o-fluidimg"
+             alt=""
+             width="600"
+             height="800">
       {% endif %}
     
     </div>

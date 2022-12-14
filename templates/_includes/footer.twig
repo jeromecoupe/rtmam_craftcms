@@ -11,11 +11,19 @@
         </div>
         <div class="c-sitefooter__social">
           <nav aria-label="social media">
-            <ul class="c-socialmedia">
-              <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#" aria-label="Instragram">{% include "_svg/instagram.svg" %}</a></li>
-              <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#" aria-label="Facebook">{% include "_svg/facebook.svg" %}</a></li>
-              <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="#" aria-label="Twitter">{% include "_svg/facebook.svg" %}</a></li>
-            </ul>
+            {% if socialMedia.instagramUrl or socialMedia.facebookUrl or socialMedia.twitterUrl %}
+              <ul class="c-socialmedia">
+                {% if socialMedia.instagramUrl %}
+                  <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="{{ socialMedia.instagramUrl }}" aria-label="Instragram">{% include "_svg/instagram.svg" %}</a></li>
+                {% endif %}
+                {% if socialMedia.facebookUrl %}
+                  <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="{{ socialMedia.facebookUrl }}" aria-label="Facebook">{% include "_svg/facebook.svg" %}</a></li>
+                {% endif %}
+                {% if socialMedia.twitterUrl %}
+                  <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="{{ socialMedia.twitterUrl }}" aria-label="Twitter">{% include "_svg/twitter.svg" %}</a></li>
+                {% endif %}
+              </ul>
+            {% endif %}
           </nav>
         </div>
       </div>

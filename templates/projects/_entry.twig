@@ -1,17 +1,62 @@
 {% extends "_layouts/base.twig" %}
 
+{% set currentSection = craft.entries()
+  .section("projectsPage")
+  .one() %}
+
 {% block main %}
+
   {# 
     - comme Craft est gentil et qu'il SAIT (psq on lui a dit en créant notre section projet) que ce format d'URL correspond à une entry de la section projet (ROUTING), il met à notre disposition un objet "entry".
     - cet objet "entry" contient les valeurs de tous les champs (pour afficher le champs title, on écrit "{{ entry.title }}" et ainsi de suite)
   #}
+
+  {# banner #}
   {% set img = entry.projectImage.one() %}
-  {% if img %}
-    <img src="{{ img.getUrl() }}" alt="">
-  {% endif %}
-  <h1>{{ entry.title }}</h1>
-  <p>{{ entry.projectTagline }}</p>
-  <div>
-    {{ entry.projectIntro }}
+  <div class="c-banner">
+    {% if img %}
+      <img src="{{ img.getUrl({ width: 800, height: 450 }) }}" 
+           srcset="{{ img.getUrl({ width: 800, height: 450 }) }} 800w,
+                   {{ img.getUrl({ width: 1024, height: 576 }) }} 1024w,
+                   {{ img.getUrl({ width: 1500, height: 844 }) }} 1500w"
+           sizes="100vw" 
+           loading="lazy"
+           decoding="async"
+           alt="{{ img.title }}" 
+           width="1500"
+           height="844">
+    {% endif %}
   </div>
+
+  <div class="c-pagesection">
+
+        <div class="c-casemodule">
+          <div class="l-container  l-container--copy">
+              <h1 class="c-h1  u-mb-xs">{{ entry.title }}</h1>
+              <h2 class="c-subtitle">{{ entry.projectTagline }}</h2>
+              {{ entry.projectIntro }}
+          </div>
+        </div>
+
+        {% for mxBlock in entry.projectBody %}
+
+          {% switch mxBlock.type %}
+            {% case "blockText" %}
+              {% include "_matrix/textBlock.twig" with {
+                mxBlock: mxBlock
+              } only %}
+            {% case "blockImage" %}
+              {% include "_matrix/imageBlock.twig" with {
+                mxBlock: mxBlock
+              } only %}
+            {% case "blockVideo" %}
+              {% include "_matrix/videoBlock.twig" with {
+                mxBlock: mxBlock
+              } only %}
+          {% endswitch %}
+
+        {% endfor %}
+
+
+      </div>
 {% endblock %}

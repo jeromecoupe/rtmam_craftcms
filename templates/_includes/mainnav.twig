@@ -9,23 +9,27 @@
   {% for item in allNav %}
     {% if loop.first %}<ul class="c-mainnav">{% endif %}
 
-      {# comme tous les champs relationnels, le champs entries (qui lie vers les singles) renvoie toujours un TABLEAU d'objet (même s'il n'y a qu'une entry liée). Il nous faut aller chercher la première (et la seule) avec .one() #}
+      {# comme tous les champs relationnels, le champs entries (qui lie vers les singles) renvoie toujours un TABLEAU d'objets (même s'il n'y a qu'une entry liée). Il nous faut aller chercher la première (et la seule) avec .one() #}
+
+      {# navEntry c'est l'entry (single) liée à notre navigation #}
       {% set navEntry = item.navEntry.one() %}
-      {# prendre l'URL de l'entry liée #}
-      {% set navUrl = navEntry.url %}
-      {# prendre l'ID de l'enty liée #}
-      {% set navId = navEntry.id %}
+      {# on doit comparer l'ID de cette entry à une variable currentSectionId
+        - celle ci vaut: 
+          - soit l'ID de l'entry currentSection (ajoutée manuellement sur le template de détail de projet)
+          - soit l'ID de l'entry de la page
+          - soit null #}
+      {% set currentSectionId = currentSection.id ?? entry.id ?? null %}
       
       {# comparer l'ID de l'entry liée avec l'ID de l'entry de la single affichée par la page. Rappel: Craft nous donne une variable "entry" dès que nous sommes sur une page dont l'URL correspond au détail d'une entry. #}
       {% set currentClass = "" %}
       {% set currentAria = "" %}
-      {% if navId == entry.id %}
+      {% if navEntry.id == currentSectionId %}
         {% set currentClass = "is-current" %}
         {% set currentAria = "aria-current=\"page\"" %}
       {% endif %}
 
       <li class="c-mainnav__item">
-        <a class="c-mainnav__link {{ currentClass }}" {{ currentAria|raw }} href="{{ navUrl }}">{{ item.navLabel }}</a>
+        <a class="c-mainnav__link {{ currentClass }}" {{ currentAria|raw }} href="{{ navEntry.url }}">{{ item.navLabel }}</a>
       </li>
 
     {% if loop.last %}</ul>{% endif %}

@@ -1,0 +1,33 @@
+{# =======================
+variables
+======================= #}
+
+{% set mxBlock = mxBlock ?? null %}
+
+{% set service = mxBlock.mxVideoService ?? null %}
+{% set videoId = mxBlock.mxVideoId ?? null %}
+{% set caption = mxBlock.mxVideoCaption ?? null %}
+
+{% set videoUrl = "https://www.youtube-nocookie.com/embed/#{ videoId }" %}
+{% if service == "vimeo" %}
+  {% set videoUrl = "https://player.vimeo.com/video/#{ videoId }" %}
+{% endif %}
+
+
+{# =======================
+template
+======================= #}
+
+<div class="c-casemodule">
+  <div class="l-container">
+    <figure class="c-figure">
+      <div class="o-fluidvideo">
+        <iframe src="{{ videoUrl }}" 
+                width="1500" 
+                height="844"
+                loading="lazy"></iframe>
+      </div>
+      <figcaption class="c-figure__caption">{{ caption }}</figcaption>
+    </figure>
+  </div>
+</div>

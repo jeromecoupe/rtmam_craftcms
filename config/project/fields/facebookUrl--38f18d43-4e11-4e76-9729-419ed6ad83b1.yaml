@@ -1,0 +1,14 @@
+columnSuffix: fqyljopd
+contentColumnType: string(255)
+fieldGroup: 35e61bba-1b91-425a-b722-8e59a00d6ca9 # globals
+handle: facebookUrl
+instructions: null
+name: 'Facebook Url'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url
