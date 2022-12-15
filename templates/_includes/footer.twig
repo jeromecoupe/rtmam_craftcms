@@ -4,10 +4,16 @@
       <div class="c-sitefooter__contact">
 
         <div class="c-sitefooter__links">
-          <ul class="c-contactlist">
-            <li class="c-contactlist__item"><a class="c-contactlist__link" href="mailto:hello@zodiak.agency">hello@zodiak.agency</a></li>
-            <li class="c-contactlist__item"><a class="c-contactlist__link" href="tel:00322345657">+32 2 345 657</a></li>
-          </ul>
+          {% if contact.companyEmail or (contact.companyPhoneDisplay and contact.companyPhoneMachines) %}
+            <ul class="c-contactlist">
+              {% if contact.companyEmail %}
+                <li class="c-contactlist__item"><a class="c-contactlist__link" href="mailto:{{ contact.companyEmail }}">{{ contact.companyEmail }}</a></li>
+              {% endif %}
+              {% if contact.companyPhoneDisplay and contact.companyPhoneMachines %}
+                <li class="c-contactlist__item"><a class="c-contactlist__link" href="tel:{{ contact.companyPhoneMachines }}">{{ contact.companyPhoneDisplay }}</a></li>
+              {% endif %}
+            </ul>
+          {% endif %}
         </div>
         <div class="c-sitefooter__social">
           <nav aria-label="social media">
@@ -32,9 +38,9 @@
 
         <div class="c-sitefooter__address">
           <address class="c-footeraddress">
-            Zodiak Agency<br>
-            Route de Blocry, 5<br>
-            1348 Louvain-La-Neuve
+            {{ contact.companyName }}<br>
+            {{ contact.addressStreet }}, {{ contact.addressNumber }}<br>
+            {{ contact.addressPostcode }} {{ contact.addressCity }}
           </address>
         </div>
 

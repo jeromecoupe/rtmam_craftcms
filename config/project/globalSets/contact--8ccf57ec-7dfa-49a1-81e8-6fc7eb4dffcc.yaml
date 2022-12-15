@@ -1,0 +1,113 @@
+fieldLayouts:
+  1e8cb038-0d19-4c41-9327-224d00d2755f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: e9c9b1b3-812e-46d4-b1fb-52af947852d9 # Company Name
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bed69e1e-7d2b-4f2d-87ff-5e3c8cbefed7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 030ba9c1-577c-40f0-9f37-a3c3e842fd61 # Address Street
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ef9407d9-5649-45bc-94c0-5c8aa12340eb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cd442455-aba3-4a26-a666-5604d971034a # Address Street Number
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cb53c390-3675-4bc6-b663-bf5ec01b5c60
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d6c7bb81-4750-4801-bf3b-a559a380be16 # Address post code
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9db7a846-279b-4aa4-b81f-3b891753a26e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9089613b-d635-45cd-a108-093a3393286f # Address city
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 33f183c5-d9eb-4eb5-a768-2f7390ee0f3c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: cab2c4b9-2c9a-4c1b-94b9-f6ecd9e19721
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: b28554f1-ab08-417a-a4f6-897eab6e150a # Company Phone (display)
+            instructions: 'Phone for humans: format +32 474 222 333'
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1c83ba85-7046-409d-a753-ecdd76800897
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0871f1bd-00f9-4020-ac32-00797a141b4a # Company Phone (machines)
+            instructions: 'Phone for machines: format is 0032474222333'
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a23c900-a084-4557-9cfd-38ec4af46897
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c4c14135-b084-452c-b4cf-c39b6fd9175d # Company Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd7cb982-328c-4489-9cbb-009d642c8f2d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 02414f19-abf4-497f-a31b-b0722323ff3c
+        userCondition: null
+handle: contact
+name: Contact
+sortOrder: 2

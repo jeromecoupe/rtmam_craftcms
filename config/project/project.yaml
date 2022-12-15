@@ -1,4 +1,4 @@
-dateModified: 1671036552
+dateModified: 1671092654
 elementSources:
   craft\elements\Entry:
     -
@@ -74,9 +74,11 @@ meta:
     6ef3fe51-685a-4e26-8de6-9bb92fc4e7e0: Skills # Skills
     7d818f4b-12b3-4cd5-a3a2-1d7e7795d121: Content # Content
     8bdc33b9-d070-4f3f-ba4e-8b60a1ada3b6: Service # Service
+    8ccf57ec-7dfa-49a1-81e8-6fc7eb4dffcc: Contact # Contact
     9a47d3d4-06fa-448c-a974-f78b60fab694: 'Zodiakagency Craft' # Zodiakagency Craft
     15de42af-6dbd-42c1-99d2-a54309eda276: 'Banners Images' # Banners Images
     18ff1bed-af09-450d-a02f-2eb6f57a5866: Title # Title
+    030ba9c1-577c-40f0-9f37-a3c3e842fd61: 'Address Street' # Address Street
     35e61bba-1b91-425a-b722-8e59a00d6ca9: globals # globals
     38f18d43-4e11-4e76-9729-419ed6ad83b1: 'Facebook Url' # Facebook Url
     39c11757-82e2-471c-b1c4-39afd5421466: Image # Image
@@ -90,21 +92,28 @@ meta:
     605fda05-d777-4511-9412-031b126e3c31: 'Home Page' # Home Page
     633fee1d-baee-40f7-a100-07339748b36f: home # home
     715fe2d6-a473-4909-be0a-efaa2280709c: Introduction # Introduction
+    0871f1bd-00f9-4020-ac32-00797a141b4a: 'Company Phone (machines)' # Company Phone (machines)
     6303d516-27d1-4c46-a262-8961d263c2eb: Intro # Intro
     255693df-55b5-4718-9ddb-68fa1ada246d: projects # projects
+    9089613b-d635-45cd-a108-093a3393286f: 'Address city' # Address city
     71616991-7357-4326-a812-50fe9892f288: Tagline # Tagline
     a0371bee-a5e1-4a17-a84b-f7649c0d2868: 'About Page' # About Page
     a7687043-975c-4f08-8cfd-156d3bbe21bd: 'Projects page' # Projects page
     ab4ca841-ee46-4f8d-9bd5-0ad4ed598c73: 'We do title' # We do title
     b003f777-25b4-4ecf-90b5-3e954ca2dc8a: 'Projects Images' # Projects Images
     b84caf5d-ef5a-4d0b-9fc0-853488a722af: 'Main Navigation' # Main Navigation
+    b28554f1-ab08-417a-a4f6-897eab6e150a: 'Company Phone (display)' # Company Phone (display)
     bbb88a10-79f6-4e02-987b-330fa874eb7e: Default # Default
     bc1649ee-a883-4a06-ba32-280da43d1797: Skill # Skill
+    c4c14135-b084-452c-b4cf-c39b6fd9175d: 'Company Email' # Company Email
     c9c650ec-7fd2-4941-b966-d82f4e449846: 'About Page' # About Page
     c744faa3-eb71-40a7-a09c-1e84c44145bd: Caption # Caption
     c26390ae-27ab-44a4-b520-d231a9a51e38: Description # Description
     cc467438-c5ba-458f-9ebc-b49b5f094d25: 'Projects page' # Projects page
+    cd442455-aba3-4a26-a666-5604d971034a: 'Address Street Number' # Address Street Number
     cf2e8d9c-d608-4aa8-955c-91e5111f9985: 'Projects Intro' # Projects Intro
+    d6c7bb81-4750-4801-bf3b-a559a380be16: 'Address post code' # Address post code
+    e9c9b1b3-812e-46d4-b1fb-52af947852d9: 'Company Name' # Company Name
     eb57f4c8-ab1b-49ab-8751-319e54b8fac2: 'Zodiakagency Craft' # Zodiakagency Craft
     f601f0d9-7321-460b-b47d-7f130933e31f: 'Instagram Url' # Instagram Url
     f684ff07-12b7-4d89-a0b8-4431a99fa54a: Common # Common
